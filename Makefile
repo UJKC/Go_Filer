@@ -5,6 +5,7 @@ SRC_DIR = .
 OUTPUT_DIR = output
 BUILD_PATH = $(OUTPUT_DIR)/$(APP_NAME)
 TEST_RESULTS = $(OUTPUT_DIR)/test_results.txt
+TEST_DIR = ./test
 
 # Default target
 all: build
@@ -22,13 +23,13 @@ build: $(OUTPUT_DIR)
 # Run tests
 test_li: $(OUTPUT_DIR)
 	@echo "Running tests..."
-	@go test ./... -v | tee $(TEST_RESULTS)
+	@go test $(TEST_DIR)/... -v | tee $(TEST_RESULTS)
 	@echo "Tests complete! Results are in $(TEST_RESULTS)"
 
 # Windows tests
 test_wi: $(OUTPUT_DIR)
 	@echo "Running tests..."
-	@powershell -Command "go test ./... -v | Tee-Object -FilePath $(TEST_RESULTS)"
+	@powershell -Command "go test $(TEST_DIR)/... -v | Tee-Object -FilePath $(TEST_RESULTS)"
 	@echo "Tests complete! Results are in $(TEST_RESULTS)"
 
 # Clean build artifacts
