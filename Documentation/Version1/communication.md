@@ -1,4 +1,0 @@
-- # Communication
-	- ## Features
-		- Basic Go HTTP server
-		- Simple Build and test automation Makefile
