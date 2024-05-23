@@ -20,9 +20,15 @@ build: $(OUTPUT_DIR)
 	@echo "Build complete! Executable is at $(BUILD_PATH)"
 
 # Run tests
-test: $(OUTPUT_DIR)
+test_li: $(OUTPUT_DIR)
 	@echo "Running tests..."
 	@go test ./... -v | tee $(TEST_RESULTS)
+	@echo "Tests complete! Results are in $(TEST_RESULTS)"
+
+# Windows tests
+test_wi: $(OUTPUT_DIR)
+	@echo "Running tests..."
+	@powershell -Command "go test ./... -v | Tee-Object -FilePath $(TEST_RESULTS)"
 	@echo "Tests complete! Results are in $(TEST_RESULTS)"
 
 # Clean build artifacts
