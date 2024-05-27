@@ -43,5 +43,10 @@ run: build
 	@echo "Running the application..."
 	@./$(BUILD_PATH)
 
+# Run decoy server
+decoy:
+	@echo "Running decoy server"
+	@python decoy.py
+
 # Phony targets (not associated with files)
 .PHONY: all build test clean run
