@@ -48,5 +48,11 @@ decoy:
 	@echo "Running decoy server"
 	@python decoy.py
 
+# Build the application for Linux
+build_linux: $(OUTPUT_DIR)
+	@echo "Building the application for Linux..."
+	@GOOS=linux GOARCH=amd64 go build -o $(BUILD_PATH)_linux $(SRC_DIR)
+	@echo "Build complete! Executable is at $(BUILD_PATH)_linux"
+
 # Phony targets (not associated with files)
 .PHONY: all build test clean run
