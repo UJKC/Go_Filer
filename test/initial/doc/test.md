@@ -44,18 +44,18 @@
 	3. If the connection is successful, close it and pass the test.
 	4. If the connection fails, the test fails.
 
-- ### 2. Test Case: Check if Port 69696 is Unreachable
+- ### 2. Test Case: Check if Port 6969 is Unreachable
   
-  Objective: Verify that port 69696 is not open or listening for connections on the localhost.  
+  Objective: Verify that port 6969 is not open or listening for connections on the localhost.  
   
   Test File: `port_unreachable_test.go`  
   
   Test Function: `TestPortUnreachable`  
   
-  Description: This test checks that port 69696 on localhost is unreachable. This is to ensure that no other application is using this port, which should remain closed.  
+  Description: This test checks that port 6969 on localhost is unreachable. This is to ensure that no other application is using this port, which should remain closed.  
   
   Steps:  
-	1. Attempt to establish a TCP connection to `localhost:69696`.
+	1. Attempt to establish a TCP connection to `localhost:6969`.
 	2. Use a 2-second timeout for the connection attempt.
 	3. If the connection fails (which is expected), log the success and pass the test.
 	4. If the connection is successful, close it and fail the test.
@@ -71,7 +71,7 @@
   This command will run all the test files in the `test` directory and provide verbose output of the test results.  
 - ## Conclusion
   
-  These test cases verify the fundamental network behavior of the Go Filer server, ensuring that it correctly listens on the intended port (10000) and that no unintended ports (69696) are open. This helps validate the server setup and network configuration. Future tests can expand on this foundation to cover more functionality and edge cases.  
+  These test cases verify the fundamental network behavior of the Go Filer server, ensuring that it correctly listens on the intended port (10000) and that no unintended ports (6969) are open. This helps validate the server setup and network configuration. Future tests can expand on this foundation to cover more functionality and edge cases.  
 - ## Running the Tests
   
   To run these tests, navigate to the root directory of your Go Filer project and execute the following command in your terminal:  
@@ -83,4 +83,4 @@
   This command will run all the test files in the `test` directory and provide verbose output of the test results.  
 - ## Conclusion
   
-  These test cases verify the fundamental network behavior of the Go Filer server, ensuring that it correctly listens on the intended port (10000) and that no unintended ports (69696) are open. This helps validate the server setup and network configuration. Future tests can expand on this foundation to cover more functionality and edge cases.
+  These test cases verify the fundamental network behavior of the Go Filer server, ensuring that it correctly listens on the intended port (10000) and that no unintended ports (6969) are open. This helps validate the server setup and network configuration. Future tests can expand on this foundation to cover more functionality and edge cases.
